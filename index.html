@@ -53,7 +53,10 @@
 			<div class="swiper_main">
 				<img src="./img/conputer.webp">
 				<div class="swiper_position">
-					<img src="./img/mv2.webp">
+					<img class="first" src="./img/mv2.webp" alt="">
+					<img class="img 1" src="./img/mv2.webp">
+					<img class="img 2" src="./img/WX20201221-142113@2x.png">
+					<img class="img 3" src="./img/WX20201221-142135@2x.png">
 				</div>
 			</div>
 
@@ -180,7 +183,7 @@
 				<div class="center_img">
 					<img
 						src="https://static.wixstatic.com/media/c9d3494be883cc2bd520386fed30f296.png/v1/fill/w_30,h_30,al_c,q_85,usm_0.66_1.00_0.01/c9d3494be883cc2bd520386fed30f296.webp">
-					<span>Twitter</span>
+					<span>Facebook</span>
 				</div>
 			</div>
 
@@ -214,8 +217,31 @@
 </body>
 
 
+<script type="text/javascript">
+	var index = 0;
+	//改变图片
+	function ChangeImg() {
+		index++;
+		var a = document.getElementsByClassName("img");
+		var b = document.getElementsByClassName("first");
+
+		b[0].style.display = 'none';
+		if (index >= a.length) index = 0;
+		for (var i = 0; i < a.length; i++) {
+			a[i].style.display = 'none';
+		}
+		a[index].style.display = 'block';
+	}
+	//设置定时器，每隔两秒切换一张图片
+	setInterval(ChangeImg, 3000);
+</script>
+
 <style type="text/css">
 	.home_but {
+		display: none;
+	}
+
+	.img {
 		display: none;
 	}
 
@@ -526,18 +552,21 @@
 		.main {
 			width: 100%;
 			height: auto;
-			background-color: aqua;
+			/* background-color: aqua; */
 		}
-	.home_but .imgbox img{
+
+		.home_but .imgbox img {
 			width: 100px;
 			height: 100px;
 		}
-		.home_but .imgbox{
+
+		.home_but .imgbox {
 			width: 100px;
 			height: 100px;
-			margin:  0 auto;
+			margin: 0 auto;
 			padding-top: 25px;
 		}
+
 		.head {
 			width: auto;
 		}
@@ -559,20 +588,173 @@
 			display: flex;
 			align-items: center;
 		}
-		
+
 
 		.head_img img {
 			width: 158px;
 			height: 158px;
 		}
-		.head_text{
+
+		.head_text {
 			width: 60%;
 		}
-		.head_text1{
+
+		.head_text1 {
 			font-size: 60px;
 		}
-		.head_text2{
+
+		.head_text2 {
 			font-size: 36px;
+		}
+
+		.swiper {
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		.swiper_head {
+			font-size: 80px;
+		}
+
+		.swiper_text {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.text_left {
+			font-size: 40px;
+			width: 100%;
+		}
+
+		.text_but {
+			margin-top: 80px;
+			width: 90%;
+			height: 120px;
+			line-height: 120px;
+			font-size: 40px;
+		}
+
+		.text_but:hover {
+			margin-top: 80px;
+			width: 90%;
+			height: 120px;
+			line-height: 120px;
+			font-size: 40px;
+			background-color: rgba(234, 88, 72, 1);
+		}
+
+		.swiper_main {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.swiper_main img {
+			width: 875px;
+		}
+
+		.swiper_position {
+			width: 582px;
+			height: 409px;
+			position: absolute;
+			top: 113px;
+			left: 150px;
+		}
+
+		.swiper_position img {
+			width: 582px;
+			height: 409px;
+			background-size: cover;
+		}
+
+		.textbox {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.textbox_head {
+			font-size: 70px;
+		}
+
+		.first_box {
+			flex-direction: column;
+		}
+
+		.box_left {
+			width: 100%;
+			padding-left: 0;
+			padding-top: 30px;
+		}
+
+		.box_left_head {
+			font-size: 66px;
+			justify-content: left;
+		}
+
+		.box_left_head img {
+			width: 100px;
+			height: 100px;
+			
+		}
+		.box_right{
+			width: 100%;
+			padding-left: 0;
+			padding-top: 30px;
+		}
+		.foot_main{
+			width: 90%;
+			margin: 0 auto;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.left{
+			display: none;
+		}
+		.center{
+			width: 100%;
+		}
+		.center_head{
+			font-size: 40px;
+		}
+		.center_img{
+			font-size: 35px;
+		}
+		.center_img img{
+			width: 80px;
+			height: 80px;
+		}
+		.right{
+			width: 100%;
+			height: auto;
+			padding-left: 40px;
+			margin-top: 100px;
+		}
+		.right_head{
+			font-size: 40px;
+		}
+		.right_input{
+			width: 90%;
+			height: 80px;
+		}
+		.right_input input{
+			font-size: 30px;
+		}
+		.but{
+			width: 90%;
+			justify-content: center;
+			padding-bottom: 100px;
+		}
+		.right_but{
+			width: 500px;
+			height: 100px;
+			line-height: 100px;
+			font-size: 30px;
+		}
+		.right_but:hover{
+			width: 500px;
+			height: 100px;
+			line-height: 100px;
+			font-size: 30px;
+			background-color: rgba(234, 88, 72, 1);
 		}
 	}
 </style>
