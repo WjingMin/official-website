@@ -58,6 +58,15 @@
 					<img class="img 2" src="./img/WX20201221-142113@2x.png">
 					<img class="img 3" src="./img/WX20201221-142135@2x.png">
 				</div>
+
+				<div class="swiper_buts">
+					<div class="swiper_leftbuts" onclick="testAlert()">
+						<img src="./img/左 (1).png" alt="">
+					</div>
+					<div class="swiper_rightbuts" onclick="rightclick()">
+						<img src="./img/右.png" alt="">
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -234,6 +243,41 @@
 	}
 	//设置定时器，每隔两秒切换一张图片
 	setInterval(ChangeImg, 3000);
+
+	function testAlert() {
+		console.log(index)
+		var a = document.getElementsByClassName("img");
+		var b = document.getElementsByClassName("first");
+		// if index = 0;
+		// for (var i = 0; i < a.length; i++) {
+		// 	a[i].style.display = 'none';
+		// }
+		if (index === 0) {
+
+		} else {
+			for (var i = 0; i < a.length; i++) {
+				if (i === index - 1) {
+				} else {
+					a[i].style.display = 'none';
+				}
+
+			}
+			a[index - 1].style.display = 'block';
+		}
+	}
+
+	function rightclick(){
+		console.log(index)
+		var a = document.getElementsByClassName("img");
+		var b = document.getElementsByClassName("first");
+		b[0].style.display = 'none';
+		index ++
+		if (index >= a.length) index = 0;
+		for (var i = 0; i < a.length; i++) {
+			a[i].style.display = 'none';
+		}
+		a[index].style.display = 'block';
+	}
 </script>
 
 <style type="text/css">
@@ -367,6 +411,36 @@
 		position: absolute;
 		top: 113px;
 		left: 157px;
+	}
+
+	.swiper_buts {
+		width: 662px;
+		height: 409px;
+		position: absolute;
+		top: 113px;
+		left: 157px;
+		display: flex;
+		align-items: center;
+	}
+
+	.swiper_leftbuts {
+		width: 50%;
+	}
+
+	.swiper_rightbuts {
+		width: 50%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.swiper_leftbuts img {
+		width: 50px;
+		height: 50px;
+	}
+
+	.swiper_rightbuts img {
+		width: 50px;
+		height: 50px;
 	}
 
 	.swiper_position img {
@@ -514,7 +588,7 @@
 		height: 100%;
 		outline: none;
 		border: 0;
-		background-color:rgb(182, 182, 182);
+		background-color: rgb(182, 182, 182);
 	}
 
 	.right_but {
@@ -666,6 +740,36 @@
 			background-size: cover;
 		}
 
+		.swiper_buts {
+			width: 582px;
+			height: 409px;
+			position: absolute;
+			top: 113px;
+			left: 150px;
+			display: flex;
+			align-items: center;
+		}
+
+		.swiper_leftbuts {
+			width: 50%;
+		}
+
+		.swiper_rightbuts {
+			width: 50%;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.swiper_leftbuts img {
+			width: 50px;
+			height: 50px;
+		}
+
+		.swiper_rightbuts img {
+			width: 50px;
+			height: 50px;
+		}
+
 		.textbox {
 			width: 80%;
 			margin: 0 auto;
@@ -693,63 +797,77 @@
 		.box_left_head img {
 			width: 100px;
 			height: 100px;
-			
+
 		}
-		.box_right{
+
+		.box_right {
 			width: 100%;
 			padding-left: 0;
 			padding-top: 30px;
 		}
-		.foot_main{
+
+		.foot_main {
 			width: 90%;
 			margin: 0 auto;
 			flex-direction: column;
 			align-items: flex-start;
 		}
-		.left{
+
+		.left {
 			display: none;
 		}
-		.center{
+
+		.center {
 			width: 100%;
 		}
-		.center_head{
+
+		.center_head {
 			font-size: 40px;
 		}
-		.center_img{
+
+		.center_img {
 			font-size: 35px;
 		}
-		.center_img img{
+
+		.center_img img {
 			width: 80px;
 			height: 80px;
 		}
-		.right{
+
+		.right {
 			width: 100%;
 			height: auto;
 			padding-left: 40px;
 			margin-top: 100px;
 		}
-		.right_head{
+
+		.right_head {
 			font-size: 40px;
 		}
-		.right_input{
+
+		.right_input {
 			width: 90%;
 			height: 80px;
 		}
-		.right_input input{
+
+		.right_input input {
 			font-size: 30px;
 		}
-		.but{
+
+		.but {
 			width: 90%;
 			justify-content: center;
 			padding-bottom: 100px;
 		}
-		.right_but{
+
+		.right_but {
 			width: 500px;
 			height: 100px;
 			line-height: 100px;
 			font-size: 30px;
 		}
-		.right_but:hover{
+
+		.right_but:hover {
 			width: 500px;
 			height: 100px;
 			line-height: 100px;
